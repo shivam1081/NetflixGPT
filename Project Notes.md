@@ -7,4 +7,5 @@
 Notes:- 
 
 - If dealing with a big form then always use formik.
-- 
+- Instead of using the state variables you can use the reference.
+- useRef is used to point some feild like input fields.

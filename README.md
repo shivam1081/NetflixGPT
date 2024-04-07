@@ -12,3 +12,13 @@
 - NetflixGpt
     - Search Bar
     - Movie Suggestions
+
+What is done ?
+- Create React App
+- Configured Tailwindcss
+- Header
+- Routing of App
+- Login Form
+- Sign Up Form
+- Form Validation
+- useRef Hook
