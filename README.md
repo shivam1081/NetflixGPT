@@ -1,4 +1,5 @@
 # Features
+- Header
 - Login and Signup Page.
     - Sign In / Sign up Form
 - Browse Page (will only comes after authentication)
