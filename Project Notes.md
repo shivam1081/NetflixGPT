@@ -9,3 +9,19 @@ Notes:-
 - If dealing with a big form then always use formik.
 - Instead of using the state variables you can use the reference.
 - useRef is used to point some feild like input fields.
+
+Deploying on firebase (Episode 14 -1:41:48)
+
+- first create aproject in firebase.
+- then npm install firebase
+- npm install -g firebase-tools / sudo npm install -g firebase-tools
+- firebase login
+- firebase init
+- Select build as the folder
+- Run npm run build 
+- Finally run firebase deploy https://netflixgpt-21ac9.web.app
+
+Install Two libraries for redux toolkit 
+- npm i -D @reduxjs/toolkit
+- npm i react-redux
+  

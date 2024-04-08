@@ -1,7 +1,16 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { NetflixBackground } from "../utils/constants";
 import { checkValidData } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -9,6 +18,8 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -25,6 +36,63 @@ const Login = () => {
     setErrorMessage(message);
 
     // Now once validated we can proceed to sign in
+    if (message) return; // We have a error so return
+    // Sign In Sign Up here
+    if (!isSignInForm) {
+      // Sign up logic
+      createUserWithEmailAndPassword(
+        auth,
+        email?.current?.value,
+        password?.current?.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          // Once user created we can update the user profile using this api
+          updateProfile(user, {
+            displayName: name?.current?.value,
+            photoURL: "https://avatars.githubusercontent.com/u/68644986?v=4",
+          })
+            .then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser; //auth here is utility function
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          errorCode && errorMessage && setErrorMessage("Some error occurred");
+        });
+    } else {
+      // Sign In Logic
+      signInWithEmailAndPassword(
+        auth,
+        email?.current?.value,
+        password?.current?.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          navigate("/browse");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          errorCode && errorMessage && setErrorMessage("User Not Found");
+        });
+    }
   };
 
   return (
