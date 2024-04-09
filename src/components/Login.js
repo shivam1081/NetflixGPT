@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "./Header";
-import { NetflixBackground } from "../utils/constants";
+import { NETFLIX_BACKGROUND, USER_AVATAR } from "../utils/constants";
 import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
@@ -18,7 +17,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
@@ -51,7 +49,7 @@ const Login = () => {
           // Once user created we can update the user profile using this api
           updateProfile(user, {
             displayName: name?.current?.value,
-            photoURL: "https://avatars.githubusercontent.com/u/68644986?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser; //auth here is utility function
@@ -63,7 +61,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -84,8 +81,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -100,7 +95,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         {/* Background image */}
-        <img src={NetflixBackground} alt="Background" />
+        <img src={NETFLIX_BACKGROUND} alt="Background" />
       </div>
       {/* Login Form */}
       <form

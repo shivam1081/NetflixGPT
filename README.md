@@ -33,4 +33,8 @@
 13. Created Redux Store with user slice.
 14. Implemented Signout feature
 15. Update profile api call.
+16. BugFix: Sign up user displayname and profile photo update.
+17. BugFix: If the user is not logged in redirect /browse to login page and vice-versa.
+18. Unsubcribed to onAuthStateChnaged Callback.
+19. Hardcoded the constants file.
 
