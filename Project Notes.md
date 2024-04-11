@@ -35,3 +35,10 @@ API Read Access Token:-
 eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMzdjMDZhZWE5ZTc3ZWJmNWVkYTdiZTY4MTgzY2NjZiIsInN1YiI6IjY2MTU2ODg4ZDE4YjI0MDE3YzM1Njk1ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EnSio-ZWio8gT9ep13FLgIbh1llntbu72Nn0XimuXDI
 
 API Key:- 037c06aea9e77ebf5eda7be68183cccf
+
+- In local sometimes apis and some actions are called twice this is because we are using the strict mode 
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+THis only happens in the local. Because react just do rendering twice to check for inconsistency.
