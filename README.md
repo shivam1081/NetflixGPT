@@ -47,7 +47,12 @@
 27. Update the store with trailer video data.
 28. Embedded the youtube video and make it autoplay and mute.
 29. Added tailwind classes to make main container look good.
+30. Build Secondary component that is the movies list below the trailer.
+31. Build Movie list 
+32. Found out the TMDB image cdn url.
+33. Build Movie Card 
+34. Also added other types of movies custom hook. 
 
 
-TMDB API Data fetch && Build main container
+Build Secondary Component (Movies Suggestions List View) && 
 
