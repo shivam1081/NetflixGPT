@@ -1,6 +1,6 @@
 # NetflixGpt Project
 
-[![Project Link](https://img.shields.io/badge/Project%20Link-NetflixGpt-brightgreen)](https://netflixgpt-21ac9.web.app)
+[![Project Link](https://img.shields.io/badge/Project%20Link-NetflixGpt-brightgreen)](https://netflixgpt.netlify.app/)
 
 ## Features
 - **Login and Signup Page**
