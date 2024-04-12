@@ -53,6 +53,10 @@
 33. Build Movie Card 
 34. Also added other types of movies custom hook. 
 
+## Integration of GPT APIs inside the Project 
+
+1. GPT search feature
+
 
 Build Secondary Component (Movies Suggestions List View) && 
 
