@@ -52,4 +52,7 @@ THis only happens in the local. Because react just do rendering twice to check f
 ## Concept of memoisation in react app
 
 1. If the data is already present in the app then there is no need to fetch that data again.
-2. 
+
+## Making webpage responsive 
+
+1. By default it is for mobile sm:- small devices like tablet md:- large devices like desktop.

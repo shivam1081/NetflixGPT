@@ -63,10 +63,11 @@
 6. Created GPT Search Page that shows the search results. 
 
 ## Securly stored the secret info and api keys
+1. Adding .env file to gitignore.
+2. Refer the Project Notes
 
 ## Memoization of data in our app.
 
 ## Making Website Responsvie
 
-Feature: Making website responsive 
 
