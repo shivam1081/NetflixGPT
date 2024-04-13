@@ -62,8 +62,7 @@
 5. Integrate GPT APIs.
 6. Created GPT Search Page that shows the search results. 
 
+## Making Website Responsvie
 
-
-
-Build Secondary Component (Movies Suggestions List View) && 
+Feature: Making website responsive 
 

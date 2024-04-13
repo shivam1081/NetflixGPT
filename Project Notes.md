@@ -42,4 +42,10 @@ THis only happens in the local. Because react just do rendering twice to check f
 
 1. Login to the platform.open.com and create a project and get the key (Remember that it is not be disclosed).
 2. Then install the openai library using npm install --save openai from https://www.npmjs.com/package/openai/v/4.8.0
+
+
+## How to keep secret information of Project ?
+
+1. Create a .env file
+2. Add the variable with REACT_APP_<variable name>
 3. 

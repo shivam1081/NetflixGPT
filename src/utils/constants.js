@@ -11,8 +11,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMzdjMDZhZWE5ZTc3ZWJmNWVkYTdiZTY4MTgzY2NjZiIsInN1YiI6IjY2MTU2ODg4ZDE4YjI0MDE3YzM1Njk1ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EnSio-ZWio8gT9ep13FLgIbh1llntbu72Nn0XimuXDI",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -25,6 +24,6 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "german", name: "German" },
 ];
 
-export const OPENAI_KEY = "";
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
 
 export const MOCK_GPT_MOVIES = "Raaz, 1920, Bhoot, Ek Thi Daayan, Stree";
