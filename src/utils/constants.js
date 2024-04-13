@@ -26,4 +26,5 @@ export const SUPPORTED_LANGUAGES = [
 
 export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
 
-export const MOCK_GPT_MOVIES = "Raaz, 1920, Bhoot, Ek Thi Daayan, Stree";
+export const MOCK_GPT_MOVIES =
+  "War,Dhoom,Baahubali: The Beginning,Singham,Bajrangi Bhaijaan";
