@@ -30,15 +30,16 @@ Install Two libraries for redux toolkit
 - Visit the tmdb website and create one account.
 - Then goto profile-> edit profile-> then api-> Create a api token-> and register your app.
 - You will get the API key and token 
-
-API Read Access Token:- 
-eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMzdjMDZhZWE5ZTc3ZWJmNWVkYTdiZTY4MTgzY2NjZiIsInN1YiI6IjY2MTU2ODg4ZDE4YjI0MDE3YzM1Njk1ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EnSio-ZWio8gT9ep13FLgIbh1llntbu72Nn0XimuXDI
-
-API Key:- 037c06aea9e77ebf5eda7be68183cccf
-
 - In local sometimes apis and some actions are called twice this is because we are using the strict mode 
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 THis only happens in the local. Because react just do rendering twice to check for inconsistency.
+
+
+## Setting up the OPENAI:- 
+
+1. Login to the platform.open.com and create a project and get the key (Remember that it is not be disclosed).
+2. Then install the openai library using npm install --save openai from https://www.npmjs.com/package/openai/v/4.8.0
+3. 

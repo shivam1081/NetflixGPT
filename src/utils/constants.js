@@ -24,3 +24,7 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "spanish", name: "Spanish" },
   { identifier: "german", name: "German" },
 ];
+
+export const OPENAI_KEY = "";
+
+export const MOCK_GPT_MOVIES = "Raaz, 1920, Bhoot, Ek Thi Daayan, Stree";

@@ -56,6 +56,13 @@
 ## Integration of GPT APIs inside the Project 
 
 1. GPT search feature
+2. Created GPT Search Page
+3. Created GPT Search Bar 
+4. (GOOD FEATURE) Added Multi Language feature in our app.
+5. Integrate GPT APIs.
+6. Created GPT Search Page that shows the search results. 
+
+
 
 
 Build Secondary Component (Movies Suggestions List View) && 
