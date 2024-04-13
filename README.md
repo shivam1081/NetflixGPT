@@ -62,6 +62,10 @@
 5. Integrate GPT APIs.
 6. Created GPT Search Page that shows the search results. 
 
+## Securly stored the secret info and api keys
+
+## Memoization of data in our app.
+
 ## Making Website Responsvie
 
 Feature: Making website responsive 

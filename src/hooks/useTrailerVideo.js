@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 import { addTrailerVideo } from "../utils/moviesSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constants";
 
 const useTrailerVideo = (movieId) => {
   const dispatch = useDispatch();
   // We have to fetch the movie background from the API and update the store
+
+  // Concept of memoization
+  const trailerVideo = useSelector((store) => store.movies.trailerVideo);
+
   const getMovieVideos = async () => {
     const data = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
@@ -19,7 +23,7 @@ const useTrailerVideo = (movieId) => {
     dispatch(addTrailerVideo(trailer));
   };
   useEffect(() => {
-    getMovieVideos();
+    !trailerVideo && getMovieVideos();
   }, []);
 };
 

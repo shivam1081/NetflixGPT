@@ -48,4 +48,8 @@ THis only happens in the local. Because react just do rendering twice to check f
 
 1. Create a .env file
 2. Add the variable with REACT_APP_<variable name>
-3. 
+
+## Concept of memoisation in react app
+
+1. If the data is already present in the app then there is no need to fetch that data again.
+2. 
