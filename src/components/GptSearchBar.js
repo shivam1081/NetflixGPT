@@ -23,24 +23,25 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-    // Make an API call to GPT API and get Movie Results
+    // Make an API call to Google Gemini API and get Movie Results
 
-    // Commenting the below api as we are not having open ai api free trail
-    // const gptQuery =
-    //   "Act as a Movie Recommendation system and suggest some movies for the query:" +
-    //   searchText.current.value +
-    //   "only give me names of 5 movies,comma separated like the example result given ahead. Example Result: Gadar,Sholay,DON,Duster,Koi mil gaya";
+    const { GoogleGenerativeAI } = require("@google/generative-ai");
+    // Access your API key as an environment variable (see "Set up your API key" above)
+    const genAI = new GoogleGenerativeAI(
+      process.env.REACT_APP_GOOGLE_GEMINI_API
+    );
+    // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    // const gptResults = await openai.chat.completions.create({
-    //   messages: [{ role: "user", content: gptQuery }],
-    //   model: "gpt-3.5-turbo",
-    // });
+    const prompt =
+      "Act as a Movie Recommendation system and suggest some movies for the query:" +
+      searchText.current.value +
+      "only give me names of 5 movies,comma separated like the example result given ahead. Example Result: Gadar,Sholay,DON,Duster,Koi mil gaya";
 
-    // console.log(gptResults.choices);
-    // const gptMovies=gptResults.choices?.[0]?.message?.content.split(",")
-
-    //Using mock data to proceed
-    const gptMovies = MOCK_GPT_MOVIES.split(",");
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    const gptMovies = text.split(",");
 
     // For each movie we will search TMDB APIs
 
