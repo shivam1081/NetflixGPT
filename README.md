@@ -68,6 +68,6 @@
 
 ## Memoization of data in our app.
 
-## Making Website Responsvie
+## Making Website Responsvie with svreen size.
 
 
